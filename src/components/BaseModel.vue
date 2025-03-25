@@ -4,12 +4,14 @@
     <div v-if="modalActive"
     class="p-4 bg-white self-start mt-32 max-w-screen-md">
         <slot />
-        <button class="text-white mt-8 bg-weather-primary py-2 px-6">Close</button>
+        <button class="text-white mt-8 bg-weather-primary py-2 px-6"
+        @click="$emit('close-modal')">Close</button>
     </div>
   </div>
 </template>
 
 <script setup>
+defineEmits(["close-modal"])
 defineProps({
     modalActive:{
         type:Boolean,
